@@ -1,0 +1,160 @@
+Practical 1 & 2
+1 - curl –version
+2 - sudo apt install curl
+3 - docker –version
+4 - sudo apt install docker.io
+sudo apt update
+sudo apt --fix-missing install
+Docker –verison
+docker-compose --version
+Sudo apt install docker-compose
+sudo apt remove docker-compose
+sudo rm -f /usr/bin/docker-compose
+Sudo apt update
+sudo apt install docker-compose-v2
+Docker compose version
+Python3 –version
+Go –version
+Sudo apt install golang-go
+Go version
+Sudo apt install nodejs
+Node -v
+Sudo apt install npm
+Npm —version
+ git config --global core.autocrlf false
+git config --global core.longpaths true
+mkdir Albar
+cd Albar
+git clone https://github.com/hyperledger/fabric-samples.git
+docker compose version
+sudo systemctl start docker
+echo $USER albar-khan
+sudo usermod -aG docker $USER
+newgrp docker
+cd fabric samples
+cd fabric samples
+curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/bootstrap.sh | bash
+sudo apt update
+Ls
+cd test-network
+cd test-network
+Cat network.sh
+chmod +x network.sh
+./network.sh up
+docker ps
+cd ~/Web3/Albar/fabric-samples
+curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/bootstrap.sh | bash
+ls bin
+export PATH=$PWD/bin:$PATH
+cd test-network ./network.sh up
+jq --version
+/network.sh createChannel
+./network.sh down
+
+
+Practical-3
+sudo add-apt-repository -y ppa:ethereum/ethereum
+sudo apt-get install Ethereum
+sudo apt install geth
+geth -h
+mkdir Pract3
+cd Pract3
+mkdir node0 node
+Ls -la
+geth --datadir node0 account new
+geth --datadir node1 account new
+ls -la
+nano genesis.json
+Json :c{
+  "config": {
+    "chainId": 1515,
+    "homesteadBlock": 0,
+    "eip150Block": 0,
+    "eip155Block": 0,
+    "eip158Block": 0,
+    "byzantiumBlock": 0,
+    "constantinopleBlock": 0,
+    "petersburgBlock": 0,
+    "istanbulBlock": 0,
+    "ethash": {}
+  },
+  "difficulty": "0x1",
+  "gasLimit": "0x47b760",
+  "alloc": {}
+
+}
+
+geth --datadir node0 init genesis.json
+geth --syncmode "full" \
+--datadir ./node0 \
+--networkid 1234 \
+--http \
+--http.addr 127.0.0.1 \
+--http.port 8545 \
+--http.api personal,db,eth,net,web3,miner \
+--ws \
+--ws.addr 127.0.0.1 \
+--ws.port 8546 \
+--port 30303 \
+--ipcpath /home/alexa/Pract3/node0/geth.ipc \
+--authrpc.port 8551 \
+--allow-insecure-unlock \
+--nodiscover \
+Console
+d
+geth --syncmode "full" \
+--datadir ./node1 \
+--networkid 1234 \
+--http \
+--http.addr 127.0.0.2 \
+--http.port 8547 \
+--http.api personal,db,eth,net,web3,miner \
+--ws \
+--ws.addr 127.0.0.2 \
+--ws.port 8548 \
+--port 30304 \
+--ipcpath /home/alexa/Pract3/node0/geth.ipc \
+--authrpc.port 8552 \
+--allow-insecure-unlock \
+--nodiscover \
+console
+
+
+
+sudo geth \
+--datadir node0 \
+--networkid 1234 \
+--http \
+--http.addr 127.0.0.1 \
+--http.port 8545 \
+--http.api personal,db,eth,net \
+--ws \
+--ws.addr 127.0.0.1 \
+--ws.port 8546 \
+--port 30303 \
+--allow-insecure-unlock \
+--nodiscover
+
+
+
+geth --syncmode "full" \
+--datadir ./node0 \
+--networkid 1234 \
+--http \
+--http.addr 127.0.0.1 \
+--http.port 8545 \
+--http.api personal,db,eth,net,web3,miner \
+--ws \
+--ws.addr 127.0.0.1 \
+--ws.port 8546 \
+--port 30303 \
+--ipcpath /home/alexa/Pract3/node0/geth.ipc \
+--authrpc.port 8551 \
+--allow-insecure-unlock \
+--nodiscover \
+console
+
+geth --datadir node1 --networkid 1234 --http --http.port 8545 --ipcpath node1/geth.ipc console
+
+cd Pract3/
+geth attach node1/geth.ipc
